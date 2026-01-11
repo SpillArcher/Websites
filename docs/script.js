@@ -1,18 +1,19 @@
 function sendMessage() {
-  const msg = document.getElementById("message").value;
+  const message = document.getElementById("message").value;
 
-  fetch("https://spillarcher.infinityfreeapp.com/api/message.php", {
+  fetch("https://YOUR_SITE.infinityfreeapp.com/api/message.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded"
     },
-    body: "message=" + encodeURIComponent(msg)
+    body: "message=" + encodeURIComponent(message)
   })
   .then(response => response.text())
   .then(data => {
     document.getElementById("response").innerText = data;
   })
-  .catch(err => {
+  .catch(error => {
     document.getElementById("response").innerText = "Error connecting to server";
+    console.error(error);
   });
 }
