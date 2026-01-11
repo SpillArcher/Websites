@@ -1,7 +1,7 @@
 function sendMessage() {
   const message = document.getElementById("message").value;
 
-  fetch("https://YOUR_SITE.infinityfreeapp.com/api/message.php", {
+  fetch("https://spillarcher.infinityfreeapp.com/api/message.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded"
