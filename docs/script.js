@@ -1,0 +1,18 @@
+function sendMessage() {
+  const msg = document.getElementById("message").value;
+
+  fetch("https://mytestsite.infinityfreeapp.com/api/message.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: "message=" + encodeURIComponent(msg)
+  })
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("response").innerText = data;
+  })
+  .catch(err => {
+    document.getElementById("response").innerText = "Error connecting to server";
+  });
+}
