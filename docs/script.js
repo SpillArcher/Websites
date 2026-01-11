@@ -1,6 +1,7 @@
 function sendMessage() {
   const message = document.getElementById("message").value;
 
+  // ✅ Replace this URL with your actual InfinityFree PHP URL
   fetch("https://spillarcher.infinityfreeapp.com/api/message.php", {
     method: "POST",
     headers: {
